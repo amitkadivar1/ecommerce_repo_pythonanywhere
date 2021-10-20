@@ -21,8 +21,7 @@ def export_to_csv(modeladmin,request,queryset):
         data_row = []
         for field in fields:
             value = getattr(obj, field.name)
-            # if isinstance(value, datetime.datetime):
-            #     value = value.strftime('%d/%m/%Y')
+
             data_row.append(value)
         writer.writerow(data_row)
     return response
